@@ -1,19 +1,29 @@
 /* ===== animations.css ===== */
 
-/* 🔸 Fade + Slide-up animation for sections */
+/* 🔸 Fade + Smooth Slide-up animation for general sections */
 section {
   opacity: 0;
-  transform: translateY(30px);
-  animation: fadeSlideUp linear both;
+  transform: translateY(40px);
+  animation: fadeSlideUp 1.2s ease-out both;
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
 }
 
-/* Optional delay if you want them to stagger */
-section:nth-child(1) { animation-delay: 0.3s; }
-section:nth-child(2) { animation-delay: 0.6s; }
-section:nth-child(3) { animation-delay: 0.9s; }
-section:nth-child(4) { animation-delay: 1.2s; }
+/* Optional stagger effect */
+section:nth-child(1) { animation-delay: 0.2s; }
+section:nth-child(2) { animation-delay: 0.4s; }
+section:nth-child(3) { animation-delay: 0.6s; }
+section:nth-child(4) { animation-delay: 0.8s; }
+
+/* 🌟 Drag-up animation specifically for contact area */
+#contact,
+.contact-section {
+  opacity: 0;
+  transform: translateY(80px) scale(0.95);
+  animation: dragUp 1.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
+}
 
 /* ✨ Floating profile image */
 header img {
@@ -35,6 +45,52 @@ ul li:hover,
 
 /* ✨ Fade-in footer */
 footer {
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 0.5s;
+}
+
+/* ===== Keyframes (Animations) ===== */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* 🎯 Keyframes for contact area drag-up */
+@keyframes dragUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80px) scale(0.95);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes textFade {
+  from { letter-spacing: 6px; opacity: 0; }
+  to { letter-spacing: 1.5px; opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}footer {
   animation: fadeIn 1.5s ease forwards;
   animation-delay: 0.5s;
 }
