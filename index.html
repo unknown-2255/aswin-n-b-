@@ -204,30 +204,22 @@
       </ul>
     </section>
 
-    <section>
-      <h2>Contact</h2>
-      <div class="contact">
-        <ul class="contact-list">
-            <li class="contact-item">
-                <a href="mailto:aswinnb712008@gmail.com">
-                    <span class="material-symbols-outlined">mail</span>
-                    <span>aswinnb712008@gmail.com</span>
-                </a>
-            </li>
-            <li class="contact-item">
-                <a href="tel:+9526655371">
-                    <span class="material-symbols-outlined">call</span>
-                    <span>+919526655371</span>
-                </a>
-            </li>
-            <li class="contact-item">
-                <a href="https://www.instagram.com/pvt_as.w.inee?igsh=bmVjaTFrMzB5ZDVz" target="_blank">
-                    <span class="material-symbols-outlined">photo_camera</span>
-                    <span>@pvt_as.w.inee</span>
-                </a>
-            </li>
-        </ul>
-      </div>
+    <section id="contact">
+  <h2>Contact</h2>
+  <button id="contactBtn">Contact Me</button>
+
+  <form id="contactForm" class="hidden">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+
+    <button type="submit">Send</button>
+  </form>
     </section>
   </main>
 
