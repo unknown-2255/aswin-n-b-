@@ -2,11 +2,11 @@
 
 /* 🔸 Fade + Smooth Slide-up animation for general sections */
 section {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeSlideUp 1.2s ease-out both;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
+opacity: 0;
+transform: translateY(40px);
+animation: fadeSlideUp 1.2s ease-out both;
+animation-timeline: view();
+animation-range: entry 0% cover 40%;
 }
 
 /* Optional stagger effect */
@@ -18,21 +18,108 @@ section:nth-child(4) { animation-delay: 0.8s; }
 /* 🌟 Drag-up animation specifically for contact area */
 #contact,
 .contact-section {
-  opacity: 0;
-  transform: translateY(80px) scale(0.95);
-  animation: dragUp 1.5s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-timeline: view();
-  animation-range: entry 0% cover 50%;
+opacity: 0;
+transform: translateY(80px) scale(0.95);
+animation: dragUp 1.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+animation-timeline: view();
+animation-range: entry 0% cover 50%;
 }
 
 /* ✨ Floating profile image */
 header img {
-  animation: float 4s ease-in-out infinite;
+animation: float 4s ease-in-out infinite;
 }
 
 /* ✨ Fade-in for your name */
 header h1 {
-  animation: textFade 2s ease-out;
+animation: textFade 2s ease-out;
+}
+
+/* ✨ Hover effects for lists and contact links */
+ul li:hover,
+.contact-item a:hover {
+color: var(--primary-accent);
+transform: translateX(5px);
+transition: all 0.3s ease;
+}
+
+/* ✨ Fade-in footer */
+footer {
+animation: fadeIn 1.5s ease forwards;
+animation-delay: 0.5s;
+}
+
+/* ===== Keyframes (Animations) ===== */
+@keyframes fadeSlideUp {
+from {
+opacity: 0;
+transform: translateY(60px);
+filter: blur(4px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+filter: blur(0);
+}
+}
+
+@keyframes dragUp {
+0% {
+opacity: 0;
+transform: translateY(80px) scale(0.95);
+filter: blur(6px);
+}
+100% {
+opacity: 1;
+transform: translateY(0) scale(1);
+filter: blur(0);
+}
+}
+
+@keyframes textFade {
+from { letter-spacing: 6px; opacity: 0; }
+to { letter-spacing: 1.5px; opacity: 1; }
+}
+
+@keyframes float {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+/* 🔹 Contact button styles */
+.contact-buttons {
+display: flex;
+justify-content: center;
+gap: 20px;
+margin-top: 20px;
+flex-wrap: wrap;
+}
+
+.contact-btn {
+display: flex;
+align-items: center;
+gap: 8px;
+background: var(--primary-accent);
+color: #fff;
+padding: 12px 20px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: 600;
+transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+background: #8c744f;
+transform: translateY(-5px);
+}
+
+.contact-btn .material-symbols-outlined {
+font-size: 20px;
 }
 
 /* ✨ Hover effects for lists and contact links */
