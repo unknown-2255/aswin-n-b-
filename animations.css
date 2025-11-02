@@ -32,7 +32,7 @@ animation: float 4s ease-in-out infinite;
 
 /* ✨ Fade-in for your name */
 header h1 {
-animation: textFade 2s ease-out;
+animation: textFade 0.5s ease-out;
 }
 
 /* ✨ Hover effects for lists and contact links */
